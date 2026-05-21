@@ -7,8 +7,12 @@ export function Footer() {
     <footer className="mt-32 border-t border-border/60 bg-cream">
       <div className="container-editorial py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2 max-w-sm">
-          <div className="flex items-center gap-2 mb-4">
+          <div className="flex items-center gap-3 mb-4">
             <img src={duofitLogo} alt="Duofit" className="h-12 w-auto" />
+            <div className="flex flex-col leading-tight">
+              <span className="font-bold text-base tracking-widest text-foreground uppercase">DUOFIT</span>
+              <span className="text-[10px] tracking-widest text-muted-foreground uppercase font-medium">Fitness · Nutrition · Healthy Habits</span>
+            </div>
           </div>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Sustainable coaching for nutrition, movement, and the long, quiet work of building a healthier life.

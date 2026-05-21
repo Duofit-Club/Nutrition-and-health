@@ -15,8 +15,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border/60">
       <div className="container-editorial flex h-16 md:h-20 items-center justify-between">
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center gap-3 group">
           <img src={duofitLogo} alt="Duofit" className="h-12 w-auto" />
+          <div className="flex flex-col leading-tight">
+            <span className="font-bold text-base tracking-widest text-foreground uppercase">DUOFIT</span>
+            <span className="text-[10px] tracking-widest text-muted-foreground uppercase font-medium">Fitness · Nutrition · Healthy Habits</span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10 text-sm">
