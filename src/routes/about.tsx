@@ -2,9 +2,11 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
-import founderImg from "@/assets/founder.jpg";
 import lifestyleImg from "@/assets/lifestyle.jpg";
 import coachingImg from "@/assets/coaching.jpg";
+import founderBefore from "@/assets/founder-before.jpeg";
+import founderMid from "@/assets/founder-mid.jpeg";
+import founderAfter from "@/assets/founder-after.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,9 +27,18 @@ const values = [
   { t: "Personalised", d: "Your culture, your schedule, your body. Plans bend around you, not the other way around." },
 ];
 
+const stats = [
+  { value: "9+", label: "Months of consistency" },
+  { value: "~9 kg", label: "Overall weight reduction" },
+  { value: "5.3%", label: "Body fat reduction" },
+  { value: "+6 kg", label: "Lean mass gained" },
+];
+
 function About() {
   return (
     <SiteLayout>
+
+      {/* Hero */}
       <section className="container-editorial pt-16 md:pt-24 pb-20">
         <div className="max-w-3xl">
           <Reveal><span className="eyebrow">— About</span></Reveal>
@@ -44,6 +55,7 @@ function About() {
         </div>
       </section>
 
+      {/* Wide image */}
       <section className="container-editorial pb-24">
         <Reveal>
           <div className="overflow-hidden rounded-[2rem] aspect-[16/8] bg-muted">
@@ -52,6 +64,7 @@ function About() {
         </Reveal>
       </section>
 
+      {/* Our story */}
       <section className="container-editorial pb-24 md:pb-32 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-5">
           <Reveal><span className="eyebrow">— Our story</span></Reveal>
@@ -72,32 +85,86 @@ function About() {
         </div>
       </section>
 
+      {/* ── MEET THE FOUNDER ── */}
       <section className="bg-cream/70 border-y border-border">
-        <div className="container-editorial py-24 md:py-32 grid lg:grid-cols-12 gap-12 items-center">
-          <Reveal className="lg:col-span-5">
-            <div className="overflow-hidden rounded-[2rem] aspect-[4/5] bg-muted">
-              <img src={founderImg} alt="Founder" className="h-full w-full object-cover" loading="lazy" width={1024} height={1280} />
-            </div>
-          </Reveal>
-          <div className="lg:col-span-7">
-            <Reveal><span className="eyebrow">— The founder</span></Reveal>
+        <div className="container-editorial py-24 md:py-32">
+
+          <div className="mb-14">
+            <Reveal><span className="eyebrow">— Meet the founder</span></Reveal>
             <Reveal delay={120}>
-              <h2 className="mt-5 text-4xl md:text-5xl">Meet your coach.</h2>
-            </Reveal>
-            <Reveal delay={240}>
-              <p className="mt-7 text-lg text-muted-foreground leading-relaxed">
-                With over a decade in nutrition and behavioural coaching, our founder has guided hundreds of members through the slow, real work of changing their lives — not by adding pressure, but by removing it.
-              </p>
-            </Reveal>
-            <Reveal delay={320}>
-              <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
-                "I'm not interested in transformations that don't last. I want you to find a way of living that feels like yours — and to keep it for the next twenty years."
-              </p>
+              <h2 className="mt-5 text-4xl md:text-5xl max-w-xl">
+                Built from <em className="not-italic text-primary">real</em> experience.
+              </h2>
             </Reveal>
           </div>
+
+          {/* Three progress photos */}
+          <Reveal delay={160}>
+            <div className="grid grid-cols-3 gap-4 md:gap-6 mb-16">
+              {[
+                { src: founderBefore, label: "Sep 2024 · Starting Point", sub: "81.2 kg" },
+                { src: founderMid,    label: "Mar 2025 · Visible Progress", sub: "75.0 kg" },
+                { src: founderAfter,  label: "May 2026 · Stronger Every Day", sub: "72.25 kg · 19% BF" },
+              ].map((photo, i) => (
+                <div key={i} className="flex flex-col gap-3">
+                  <div className="overflow-hidden rounded-2xl aspect-[3/4] bg-muted">
+                    <img
+                      src={photo.src}
+                      alt={photo.label}
+                      className="h-full w-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium tracking-wide text-primary uppercase">{photo.label}</p>
+                    <p className="text-sm text-muted-foreground mt-0.5">{photo.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Stats */}
+          <Reveal delay={200}>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+              {stats.map((s) => (
+                <div key={s.label} className="rounded-2xl border border-border bg-card p-6 text-center">
+                  <p className="text-3xl font-bold text-primary">{s.value}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Story text */}
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-4">
+              <Reveal>
+                <h3 className="text-3xl md:text-4xl leading-snug">
+                  My<br /><span className="text-primary">Journey.</span>
+                </h3>
+              </Reveal>
+            </div>
+            <div className="lg:col-span-8 space-y-5 text-lg text-muted-foreground leading-relaxed">
+              <Reveal delay={100}>
+                <p>For a long time, health was something I kept postponing. Work, stress, inconsistency, unhealthy eating habits, and lack of routine slowly started affecting my energy, confidence, and overall lifestyle.</p>
+              </Reveal>
+              <Reveal delay={180}>
+                <p>I had multiple failed attempts, phases where I stopped midway, and moments where progress felt too slow to continue. But eventually, I realised that transformation is not built through motivation — it is built through consistency.</p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p>What started with small daily changes gradually became a complete lifestyle shift through better nutrition, structured training, and sustainable habits. Over time, the changes became visible not just physically, but mentally — more strength, more discipline, and a healthier relationship with fitness.</p>
+              </Reveal>
+              <Reveal delay={340}>
+                <p className="text-foreground font-medium">That personal journey became the foundation of DUOFIT: helping people build realistic, sustainable health habits and become better every day.</p>
+              </Reveal>
+            </div>
+          </div>
+
         </div>
       </section>
 
+      {/* Values */}
       <section className="container-editorial py-24 md:py-32">
         <div className="max-w-2xl mb-14">
           <Reveal><span className="eyebrow">— What we believe</span></Reveal>
@@ -117,6 +184,7 @@ function About() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className="container-editorial pb-24 md:pb-32">
         <Reveal>
           <div className="rounded-[2rem] bg-foreground text-background p-10 md:p-16 grid md:grid-cols-2 gap-8 items-center">
@@ -134,6 +202,7 @@ function About() {
           </div>
         </Reveal>
       </section>
+
     </SiteLayout>
   );
 }
