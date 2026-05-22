@@ -25,94 +25,20 @@ const values = [
   { t: "Personalised", d: "Your culture, your schedule, your body. Plans bend around you, not the other way around." },
 ];
 
-const stats = [
-  { value: "9+", label: "Months of consistency" },
-  { value: "~9 kg", label: "Overall weight reduction" },
-  { value: "5.3%", label: "Body fat reduction" },
-  { value: "+6 kg", label: "Lean mass gained" },
+const timeline = [
+  { date: "Sep 2024", weight: "81.2 kg", bf: null,    label: "The Start" },
+  { date: "Nov 2024", weight: "76.4 kg", bf: null,    label: "Momentum" },
+  { date: "Mar 2025", weight: "75.0 kg", bf: null,    label: "Stronger" },
+  { date: "Jun 2025", weight: "74.5 kg", bf: "23.8%", label: "Tracking" },
+  { date: "Aug 2025", weight: "75.1 kg", bf: "24.8%", label: "Committed" },
+  { date: "May 2026", weight: "72.25 kg", bf: "19%",  label: "Lifestyle" },
 ];
 
-const timeline = [
-  {
-    date: "SEP 18, 2024",
-    weight: "81.2 kg",
-    bf: null,
-    title: "The Decision",
-    desc: "Decided to take control of my health. No more postponing.",
-    milestone: true,
-  },
-  {
-    date: "SEP 30, 2024",
-    weight: "77.5 kg",
-    bf: null,
-    title: "Early Results",
-    desc: "Early results through consistency and effort. The habit was forming.",
-    milestone: false,
-  },
-  {
-    date: "NOV 09, 2024",
-    weight: "76.4 kg",
-    bf: null,
-    title: "Building Momentum",
-    desc: "Learning, staying consistent and building momentum week by week.",
-    milestone: false,
-  },
-  {
-    date: "MAR 23, 2025",
-    weight: "75.0 kg",
-    bf: null,
-    title: "Growing Stronger",
-    desc: "Strength improving. Confidence growing. The shift was real.",
-    milestone: true,
-  },
-  {
-    date: "JUN 19, 2025",
-    weight: "74.5 kg",
-    bf: "23.8%",
-    title: "Tracking Composition",
-    desc: "Started tracking body composition to measure real progress beyond the scale.",
-    milestone: false,
-  },
-  {
-    date: "JUL 31, 2025",
-    weight: "73.6 kg",
-    bf: "22.0%",
-    title: "Focused on Strength",
-    desc: "Focused on getting stronger and improving body composition.",
-    milestone: false,
-  },
-  {
-    date: "AUG 26, 2025",
-    weight: "75.1 kg",
-    bf: "24.8%",
-    title: "Staying Committed",
-    desc: "Fluctuations happened, but I stayed committed to the process.",
-    milestone: false,
-  },
-  {
-    date: "SEP 10, 2025",
-    weight: "75.6 kg",
-    bf: "24.3%",
-    title: "Accountability",
-    desc: "Held myself accountable and kept showing up every single day.",
-    milestone: false,
-  },
-  {
-    date: "MAY 04, 2026",
-    weight: "73.85 kg",
-    bf: "20%",
-    title: "Results Showing",
-    desc: "All the hard work started to show in numbers.",
-    milestone: true,
-  },
-  {
-    date: "MAY 19, 2026",
-    weight: "72.25 kg",
-    bf: "19%",
-    title: "A New Lifestyle",
-    desc: "A lifestyle built on discipline, not motivation.",
-    milestone: true,
-  },
+const stats = [
+  { value: "9+",    label: "Months" },
+  { value: "~9 kg", label: "Lost" },
+  { value: "5.3%",  label: "Body Fat ↓" },
+  { value: "+6 kg", label: "Lean Mass" },
 ];
 
 function About() {
@@ -160,119 +86,127 @@ function About() {
         </div>
       </section>
 
-      {/* ── MEET THE FOUNDER ── */}
+      {/* ── MEET THE FOUNDER — 2 halves ── */}
       <section className="bg-cream/70 border-y border-border">
         <div className="container-editorial py-24 md:py-32">
 
           <div className="mb-14">
             <Reveal><span className="eyebrow">— Meet the founder</span></Reveal>
-            <Reveal delay={120}>
-              <h2 className="mt-5 text-4xl md:text-5xl max-w-xl">
+            <Reveal delay={100}>
+              <h2 className="mt-5 text-4xl md:text-5xl">
                 Built from <em className="not-italic text-primary">real</em> experience.
               </h2>
             </Reveal>
           </div>
 
-          {/* Three progress photos */}
-          <Reveal delay={160}>
-            <div className="grid grid-cols-3 gap-4 md:gap-6 mb-16">
-              {[
-                { src: founderBefore, label: "Sep 2024 · Starting Point", sub: "81.2 kg" },
-                { src: founderMid,    label: "Mar 2025 · Visible Progress", sub: "75.0 kg" },
-                { src: founderAfter,  label: "May 2026 · Stronger Every Day", sub: "72.25 kg · 19% BF" },
-              ].map((photo, i) => (
-                <div key={i} className="flex flex-col gap-3">
-                  <div className="overflow-hidden rounded-2xl aspect-[3/4] bg-muted">
-                    <img src={photo.src} alt={photo.label} className="h-full w-full object-cover object-top" loading="lazy" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium tracking-wide text-primary uppercase">{photo.label}</p>
-                    <p className="text-sm text-muted-foreground mt-0.5">{photo.sub}</p>
-                  </div>
+          {/* Two halves */}
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+
+            {/* ── LEFT: Story ── */}
+            <div className="space-y-6">
+              <Reveal delay={100}>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  For a long time, health was something I kept postponing. Work, stress, inconsistency, unhealthy eating habits, and lack of routine slowly started affecting my energy, confidence, and overall lifestyle.
+                </p>
+              </Reveal>
+              <Reveal delay={180}>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  I had multiple failed attempts, phases where I stopped midway, and moments where progress felt too slow to continue. But eventually, I realised that transformation is not built through motivation — it is built through <span className="text-foreground font-medium">consistency</span>.
+                </p>
+              </Reveal>
+              <Reveal delay={260}>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  What started with small daily changes gradually became a complete lifestyle shift through better nutrition, structured training, and sustainable habits. Over time, the changes became visible not just physically, but mentally — more strength, more discipline, and a healthier relationship with fitness.
+                </p>
+              </Reveal>
+              <Reveal delay={340}>
+                <div className="rounded-2xl border border-primary/30 bg-primary/5 p-6">
+                  <p className="text-base font-medium text-foreground leading-relaxed">
+                    "That personal journey became the foundation of DUOFIT: helping people build realistic, sustainable health habits and become better every day."
+                  </p>
                 </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {/* Stats */}
-          <Reveal delay={200}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-20">
-              {stats.map((s) => (
-                <div key={s.label} className="rounded-2xl border border-border bg-card p-6 text-center">
-                  <p className="text-3xl font-bold text-primary">{s.value}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          {/* ── TIMELINE ── */}
-          <div className="mb-20">
-            <Reveal>
-              <div className="mb-10">
-                <span className="eyebrow">— Journey timeline</span>
-                <h3 className="mt-4 text-3xl md:text-4xl">Every step, tracked.</h3>
-              </div>
-            </Reveal>
-
-            <div className="relative">
-              {/* Vertical line */}
-              <div className="absolute left-[18px] md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
-
-              <div className="space-y-0">
-                {timeline.map((item, i) => {
-                  const isLeft = i % 2 === 0;
-                  return (
-                    <Reveal key={i} delay={i * 60}>
-                      <div className={`relative flex items-start gap-6 md:gap-0 pb-10 ${isLeft ? "md:flex-row" : "md:flex-row-reverse"}`}>
-
-                        {/* Content card */}
-                        <div className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${isLeft ? "md:pr-10 md:text-right" : "md:pl-10 md:text-left"}`}>
-                          <div className={`inline-block rounded-2xl border bg-card p-5 w-full ${item.milestone ? "border-primary/40 bg-primary/5" : "border-border"}`}>
-                            <p className="text-xs font-medium tracking-widest text-primary uppercase mb-1">{item.date}</p>
-                            <div className={`flex items-center gap-2 mb-2 ${isLeft ? "md:justify-end" : "md:justify-start"}`}>
-                              <span className="text-xl font-bold text-foreground">{item.weight}</span>
-                              {item.bf && (
-                                <span className="text-xs font-medium bg-primary/10 text-primary px-2 py-0.5 rounded-full">{item.bf} BF</span>
-                              )}
-                            </div>
-                            <p className="text-sm font-semibold text-foreground mb-1">{item.title}</p>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                          </div>
-                        </div>
-
-                        {/* Dot on line */}
-                        <div className="absolute left-[14px] md:left-1/2 md:-translate-x-1/2 mt-5 flex items-center justify-center">
-                          <div className={`rounded-full border-2 border-background shadow ${item.milestone ? "h-4 w-4 bg-primary" : "h-3 w-3 bg-muted-foreground/40"}`} />
-                        </div>
-
-                        {/* Empty side for desktop */}
-                        <div className="hidden md:block md:w-[calc(50%-2rem)]" />
-                      </div>
-                    </Reveal>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-
-          {/* Story text */}
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4">
-              <Reveal>
-                <h3 className="text-3xl md:text-4xl leading-snug">
-                  My<br /><span className="text-primary">Journey.</span>
-                </h3>
               </Reveal>
             </div>
-            <div className="lg:col-span-8 space-y-5 text-lg text-muted-foreground leading-relaxed">
-              <Reveal delay={100}><p>For a long time, health was something I kept postponing. Work, stress, inconsistency, unhealthy eating habits, and lack of routine slowly started affecting my energy, confidence, and overall lifestyle.</p></Reveal>
-              <Reveal delay={180}><p>I had multiple failed attempts, phases where I stopped midway, and moments where progress felt too slow to continue. But eventually, I realised that transformation is not built through motivation — it is built through consistency.</p></Reveal>
-              <Reveal delay={260}><p>What started with small daily changes gradually became a complete lifestyle shift through better nutrition, structured training, and sustainable habits. Over time, the changes became visible not just physically, but mentally — more strength, more discipline, and a healthier relationship with fitness.</p></Reveal>
-              <Reveal delay={340}><p className="text-foreground font-medium">That personal journey became the foundation of DUOFIT: helping people build realistic, sustainable health habits and become better every day.</p></Reveal>
+
+            {/* ── RIGHT: Photos + Timeline + Stats ── */}
+            <div className="space-y-10">
+
+              {/* 3 progress photos */}
+              <Reveal delay={140}>
+                <div className="grid grid-cols-3 gap-3">
+                  {[
+                    { src: founderBefore, label: "Sep 2024", sub: "81.2 kg" },
+                    { src: founderMid,    label: "Mar 2025", sub: "75.0 kg" },
+                    { src: founderAfter,  label: "May 2026", sub: "72.25 kg" },
+                  ].map((photo, i) => (
+                    <div key={i} className="flex flex-col gap-2">
+                      <div className="overflow-hidden rounded-xl aspect-[3/4] bg-muted">
+                        <img
+                          src={photo.src}
+                          alt={photo.label}
+                          className="h-full w-full object-cover object-top"
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="text-center">
+                        <p className="text-[10px] font-semibold tracking-widest text-primary uppercase">{photo.label}</p>
+                        <p className="text-xs text-muted-foreground">{photo.sub}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+
+              {/* Horizontal timeline */}
+              <Reveal delay={200}>
+                <div className="overflow-x-auto pb-2">
+                  <div className="relative min-w-[520px]">
+
+                    {/* Line */}
+                    <div className="absolute top-[18px] left-4 right-4 h-px bg-border" />
+
+                    {/* Points */}
+                    <div className="relative flex justify-between">
+                      {timeline.map((item, i) => (
+                        <div key={i} className="flex flex-col items-center gap-2 w-[80px]">
+                          {/* Dot */}
+                          <div className={`relative z-10 rounded-full border-2 border-background shadow-sm flex items-center justify-center
+                            ${i === 0 || i === timeline.length - 1
+                              ? "h-5 w-5 bg-primary"
+                              : "h-3.5 w-3.5 bg-muted-foreground/50"
+                            }`}
+                          />
+                          {/* Info */}
+                          <div className="text-center">
+                            <p className="text-[9px] font-semibold tracking-wider text-primary uppercase leading-tight">{item.date}</p>
+                            <p className="text-xs font-bold text-foreground mt-0.5">{item.weight}</p>
+                            {item.bf && (
+                              <p className="text-[9px] text-muted-foreground">{item.bf} BF</p>
+                            )}
+                            <p className="text-[9px] text-muted-foreground mt-0.5">{item.label}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Stats */}
+              <Reveal delay={260}>
+                <div className="grid grid-cols-4 gap-3">
+                  {stats.map((s) => (
+                    <div key={s.label} className="rounded-xl border border-border bg-card p-4 text-center">
+                      <p className="text-xl font-bold text-primary">{s.value}</p>
+                      <p className="text-[10px] text-muted-foreground mt-0.5 leading-tight">{s.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+
             </div>
           </div>
-
         </div>
       </section>
 
