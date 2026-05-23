@@ -5,16 +5,18 @@ import duofitLogo from "../../assets/duofit-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
+  { to: "/reality", label: "Reality Check" },
   { to: "/programs", label: "Programs" },
-  { to: "/contact", label: "Contact" },
+  { to: "/results", label: "Results" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Connect" },
 ] as const;
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/70 border-b border-border/60">
-      <div className="container-editorial flex h-16 md:h-20 items-center justify-between">
+    <header className="sticky top-0 z-40 backdrop-blur-xl bg-background/80 border-b border-border/60">
+      <div className="container-editorial flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
           <img src={duofitLogo} alt="Duofit" className="h-12 w-auto" />
           <div className="flex flex-col leading-tight">
@@ -23,13 +25,13 @@ export function Navbar() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-10 text-sm">
+        <nav className="hidden md:flex items-center gap-8 text-sm">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-foreground/70 hover:text-foreground transition-colors"
-              activeProps={{ className: "text-foreground font-medium" }}
+              className="text-sm font-medium uppercase tracking-widest text-foreground/60 hover:text-foreground transition-colors"
+              activeProps={{ className: "text-sm font-medium uppercase tracking-widest text-foreground border-b-2 border-primary pb-0.5" }}
               activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
@@ -39,39 +41,28 @@ export function Navbar() {
 
         <Link
           to="/contact"
-          className="hidden md:inline-flex items-center rounded-full bg-foreground text-background px-5 py-2.5 text-sm font-medium hover:bg-foreground/90 transition-colors"
+          className="hidden md:inline-flex items-center rounded-sm bg-foreground text-background px-6 py-2.5 text-sm font-medium uppercase tracking-widest hover:bg-primary hover:text-foreground transition-colors"
         >
-          Start your journey
+          Start Journey
         </Link>
 
-        <button
-          aria-label="Toggle menu"
-          className="md:hidden p-2 -mr-2"
-          onClick={() => setOpen((v) => !v)}
-        >
+        <button aria-label="Toggle menu" className="md:hidden p-2" onClick={() => setOpen(v => !v)}>
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background">
+        <div className="md:hidden border-t border-border bg-background">
           <div className="container-editorial py-6 flex flex-col gap-4">
             {links.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="text-lg text-foreground/80 hover:text-foreground"
-              >
+              <Link key={l.to} to={l.to} onClick={() => setOpen(false)}
+                className="text-base font-medium uppercase tracking-widest text-foreground/70 hover:text-foreground">
                 {l.label}
               </Link>
             ))}
-            <Link
-              to="/contact"
-              onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium"
-            >
-              Start your journey
+            <Link to="/contact" onClick={() => setOpen(false)}
+              className="mt-2 inline-flex justify-center rounded-sm bg-foreground text-background px-5 py-3 text-sm font-medium uppercase tracking-widest">
+              Start Journey
             </Link>
           </div>
         </div>

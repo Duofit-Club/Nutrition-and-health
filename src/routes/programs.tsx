@@ -1,99 +1,141 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/Layout";
 import { Reveal } from "@/components/site/Reveal";
-import { programs } from "@/lib/programs";
 
 export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
       { title: "Programs — Duofit.club" },
-      { name: "description", content: "Personalised coaching programs for nutrition, accountability, beginner fitness and lifestyle transformation." },
-      { property: "og:title", content: "Programs — Duofit.club" },
-      { property: "og:description", content: "Coaching shaped to your life. Pick the journey that meets you where you are." },
+      { name: "description", content: "Architectures of consistency — coaching programs built for real life." },
     ],
   }),
   component: Programs,
 });
 
+const programs = [
+  {
+    title: "DUOFIT Transformation",
+    desc: "Comprehensive body recomposition tracking for high-performance individuals.",
+    points: ["Biometric body tracking metrics", "Precision macronutrient coaching", "High-yield fitness protocols", "Daily personal accountability loops"],
+  },
+  {
+    title: "DUOFIT Lifestyle",
+    desc: "Deliberate structural engineering of daily performance habits and routines.",
+    points: ["Stress response modulation", "Circadian and sleep design", "Micro-habit building methods", "Long-term identity integration"],
+  },
+  {
+    title: "DUOFIT Family Health",
+    desc: "Shared lifestyle architecture to implement health across the household.",
+    points: ["Unified dietary layout mapping", "Shared healthy routine structures", "Parent wellness maintenance", "Frictionless kitchen organisation"],
+  },
+  {
+    title: "DUOFIT Active Kids",
+    desc: "Fun, natural health exploration focused on building confidence in kids.",
+    points: ["Natural movement mechanics", "Intuitive wellness foundations", "Device-free activity tracking", "Confidence building blocks"],
+  },
+];
+
+const steps = [
+  { n: "01", t: "Assess", d: "Complete multi-point biomarker, daily behaviour, and household schedule analysis." },
+  { n: "02", t: "Plan", d: "Develop bespoke parameters that fit seamlessly into your weekly calendar." },
+  { n: "03", t: "Coach", d: "Engage in collaborative optimisation calls to adjust strategies to real-world friction." },
+  { n: "04", t: "Track", d: "Monitor clear data trends to confirm body composition shifts without obsession." },
+  { n: "05", t: "Sustain", d: "Transition tracking mechanisms into long-term, subconscious lifestyle automation." },
+];
+
 function Programs() {
   return (
     <SiteLayout>
+
+      {/* Intro */}
       <section className="container-editorial pt-16 md:pt-24 pb-16">
         <div className="max-w-3xl">
-          <Reveal><span className="eyebrow">— Programs</span></Reveal>
+          <Reveal><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Programs</span></Reveal>
           <Reveal delay={120}>
-            <h1 className="mt-6 text-5xl md:text-7xl">
-              Coaching, shaped to <em className="not-italic text-primary">your life</em>.
+            <h1 className="mt-6 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05]">
+              Architectures of<br /><span className="text-primary">consistency.</span>
             </h1>
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-7 text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Four pathways. One coach per member. Every plan personalised, every week reviewed, every habit built to last.
+              Commercially clear blueprints engineered to build functional accountability, structural habit evolution, and biometric stability.
             </p>
           </Reveal>
         </div>
       </section>
 
-      <section className="container-editorial pb-24 md:pb-32 space-y-6">
-        {programs.map((p, i) => (
-          <Reveal key={p.slug} delay={i * 80}>
-            <article id={p.slug} className="scroll-mt-24 rounded-[2rem] border border-border bg-card p-7 md:p-12 grid lg:grid-cols-12 gap-10">
-              <div className="lg:col-span-5">
-                <p className="text-xs tracking-[0.2em] text-muted-foreground">0{i + 1} — {p.duration}</p>
-                <h2 className="mt-4 text-3xl md:text-5xl">{p.title}</h2>
-                <p className="mt-4 text-primary">{p.tagline}</p>
-                <p className="mt-6 text-muted-foreground leading-relaxed">{p.description}</p>
-                <Link
-                  to="/contact"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-5 py-3 text-sm font-medium hover:bg-foreground/90 transition-colors"
-                >
-                  Apply for this program <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-              <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-10 gap-y-8">
-                <Detail label="For" value={p.for} />
-                <Detail label="Coaching" value={p.coaching} />
-                <Detail label="Nutrition" value={p.nutrition} />
-                <Detail label="Accountability" value={p.accountability} />
-                <div className="sm:col-span-2">
-                  <p className="eyebrow">— What you get</p>
-                  <ul className="mt-4 grid sm:grid-cols-2 gap-2">
-                    {p.benefits.map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-sm">
-                        <Check className="h-4 w-4 text-primary mt-0.5 shrink-0" />
-                        <span>{b}</span>
+      {/* Program Cards */}
+      <section className="container-editorial pb-24 md:pb-32">
+        <div className="grid md:grid-cols-2 gap-6">
+          {programs.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <div className="border border-border bg-card rounded-sm p-10 flex flex-col justify-between min-h-[400px] hover:-translate-y-2 hover:border-primary/50 transition-all duration-500">
+                <div>
+                  <h3 className="text-2xl font-bold tracking-tight mb-3">{p.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">{p.desc}</p>
+                  <ul className="space-y-3">
+                    {p.points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <span className="text-primary font-bold mt-0.5">—</span>
+                        {pt}
                       </li>
                     ))}
                   </ul>
                 </div>
+                <Link to="/contact"
+                  className="mt-8 inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium uppercase tracking-widest hover:bg-foreground hover:text-background hover:border-foreground transition-colors rounded-sm">
+                  Request Blueprint <ArrowRight className="h-4 w-4" />
+                </Link>
               </div>
-            </article>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
+        </div>
       </section>
 
-      <section className="container-editorial pb-24 md:pb-32">
-        <Reveal>
-          <div className="rounded-[2rem] bg-cream border border-border p-10 md:p-16 text-center max-w-3xl mx-auto">
-            <span className="eyebrow">— Not sure which?</span>
-            <h2 className="mt-5 text-3xl md:text-5xl">Let's figure it out together.</h2>
-            <p className="mt-5 text-muted-foreground leading-relaxed">Book a free 30-minute consultation and we'll help you choose the program that actually fits your life.</p>
-            <Link to="/contact" className="mt-8 inline-flex items-center gap-2 rounded-full bg-foreground text-background px-6 py-3.5 text-sm font-medium hover:bg-foreground/90 transition-colors">
-              Book a free consultation <ArrowRight className="h-4 w-4" />
-            </Link>
+      {/* Process Timeline */}
+      <section className="bg-cream border-y border-border">
+        <div className="container-editorial py-24 md:py-32">
+          <Reveal>
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-3">The Operational Roadmap</h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <p className="text-muted-foreground text-lg mb-16 max-w-xl">The structured sequence that drives sustainable behavioural results.</p>
+          </Reveal>
+
+          <div className="grid md:grid-cols-5 gap-8 relative">
+            {/* Connecting line — desktop only */}
+            <div className="absolute top-6 left-[10%] right-[10%] h-px bg-border hidden md:block" />
+            {steps.map((s, i) => (
+              <Reveal key={s.n} delay={i * 100}>
+                <div className="relative">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className="relative z-10 h-12 w-12 rounded-full bg-background border-2 border-primary flex items-center justify-center">
+                      <span className="text-xs font-bold text-primary">{s.n}</span>
+                    </div>
+                  </div>
+                  <h4 className="text-xl font-bold mb-3">{s.t}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                </div>
+              </Reveal>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container-editorial py-24 md:py-32 text-center">
+        <Reveal>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Start building healthier routines today.</h2>
+        </Reveal>
+        <Reveal delay={120}>
+          <Link to="/contact"
+            className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-primary hover:text-foreground transition-colors rounded-sm">
+            Start Your Journey <ArrowRight className="h-4 w-4" />
+          </Link>
         </Reveal>
       </section>
-    </SiteLayout>
-  );
-}
 
-function Detail({ label, value }: { label: string; value: string }) {
-  return (
-    <div>
-      <p className="eyebrow">— {label}</p>
-      <p className="mt-3 text-foreground/90 leading-relaxed">{value}</p>
-    </div>
+    </SiteLayout>
   );
 }
