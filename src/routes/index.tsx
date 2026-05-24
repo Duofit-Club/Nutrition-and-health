@@ -44,33 +44,31 @@ function Home() {
       <section className="container-editorial pt-4 md:pt-8 lg:pt-12 pb-12 md:pb-20 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <Reveal>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— BUILT AROUND YOUR LIFE</span>
-            </Reveal>
-            
-            <Reveal delay={200}>
-  <h1 className="mt-6 max-w-3xl text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.5] tracking-tight">
-    <span className="text-foreground">
-      Helping people stay healthy through practical
+          <Reveal>
+  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-[0.08em] uppercase">
+    
+    <span className="block text-primary">
+      Built
     </span>
 
-    <span className="block mt-3 text-primary">
-      Nutrition
+    <span className="block mt-2 text-primary">
+      Around
     </span>
 
     <span className="block mt-2 text-foreground">
-      Movement
+      Your Life
     </span>
 
-    <span className="block mt-2">
-      <span className="text-foreground">and</span>{" "}
-      <span className="text-primary">Healthy Habits</span>
-    </span>
-
-    <span className="block mt-4 text-foreground text-xl md:text-2xl lg:text-3xl font-medium">
-      that fit everyday life.
-    </span>
   </h1>
+</Reveal>
+
+<Reveal delay={200}>
+  <p className="mt-8 max-w-2xl text-base md:text-lg leading-[1.9] text-muted-foreground">
+    Helping people stay healthy through practical<br/>
+    <span className="text-foreground font-medium"> Nutrition</span>,
+    <span className="text-foreground font-medium"> Movement</span> and
+    <span className="text-foreground font-medium"> Healthy Habits</span>.
+  </p>
 </Reveal>
             <Reveal delay={300}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
