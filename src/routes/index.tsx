@@ -17,10 +17,22 @@ export const Route = createFileRoute("/")({
 });
 
 const highlights = [
-  { t: "Nutrition Architecture", d: "Practical eating frameworks built around your household and schedule.", sub: "Simple food choices that work with your routine and availability." },
-  { t: "Functional Fitness", d: "Efficient movement designed to match busy professional and family timelines.", sub: "Helping your body move consistently instead of extreme routines." },
-  { t: "Habit Design", d: "Habit compounding that builds frictionless consistency over time.", sub: "Small sustainable changes that become easier to maintain." },
-  { t: "Household Integration", d: "Shared wellness frameworks that elevate health across every generation.", sub: "Helping families build healthier routines together." },
+  {
+    t: "Nutrition",
+    d: "Simple food choices that work with your routine and availability.",
+  },
+  {
+    t: "Fitness & Movement",
+    d: "Helping your body move consistently instead of extreme routines.",
+  },
+  {
+    t: "Healthy Habits",
+    d: "Small sustainable changes that become easier to maintain.",
+  },
+  {
+    t: "Family Health",
+    d: "Helping families build healthier routines together.",
+  },
 ];
 
 function Home() {
@@ -32,7 +44,7 @@ function Home() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <Reveal>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Coaching, the human way</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— BUILT AROUND YOUR LIFE</span>
             </Reveal>
             <Reveal delay={100}>
               <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
@@ -53,7 +65,7 @@ function Home() {
                 </Link>
                 <Link to="/reality"
                   className="flex items-center justify-center gap-2 border border-border text-foreground px-6 py-4 text-sm font-medium uppercase tracking-widest hover:bg-cream transition-colors rounded-sm min-h-[48px]">
-                  Learn More
+                  Why Most Health Journeys Fail
                 </Link>
               </div>
             </Reveal>
@@ -81,24 +93,15 @@ function Home() {
               <Reveal>
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Why Duofit</span>
               </Reveal>
-              <Reveal delay={100}>
-                <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
-                  Sustainable wellness designed for longevity.
-                </h2>
-              </Reveal>
               <Reveal delay={160}>
-                <p className="mt-3 text-sm md:text-base font-semibold text-foreground uppercase tracking-wide">
-                  Health should work with your life, not against it.
-                </p>
-              </Reveal>
-              <Reveal delay={220}>
-                <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-                  We reject transient trends and high-pressure gym culture. DUOFIT structures realistic micro-habits that protect and cultivate long-term personal and family vitality.
-                </p>
-              </Reveal>
+  <p className="mt-3 text-sm md:text-base font-semibold text-foreground uppercase tracking-wide">
+    Health should work with your life, not against it.
+  </p>
+</Reveal>
+              
               <Reveal delay={280}>
                 <p className="mt-3 text-base text-muted-foreground leading-relaxed">
-                  Most people don't struggle because they lack information or motivation — they struggle because their routines don't fit their schedules, responsibilities or lifestyle.
+                  DUOFIT focuses on helping people build healthier habits that are realistic and sustainable. Most people don’t struggle because they lack information or motivation, they struggle because their routines don’t fit their schedules, responsibilities or lifestyle.
                 </p>
               </Reveal>
             </div>
@@ -108,8 +111,7 @@ function Home() {
                   <div className="border border-border bg-card rounded-sm p-5 md:p-6 h-full">
                     <div className="h-1 w-8 bg-primary mb-3 rounded-full" />
                     <h4 className="font-bold text-sm md:text-base text-foreground mb-2">{h.t}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-1">{h.d}</p>
-                    <p className="text-xs text-muted-foreground/70 leading-relaxed">{h.sub}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{h.d}</p>
                   </div>
                 </Reveal>
               ))}
@@ -148,12 +150,10 @@ function Home() {
               <img src={founderImg} alt="DUOFIT Founder" className="h-full w-full object-cover object-top" loading="lazy" />
             </div>
             <div>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Expert Guidance</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— BUILT FROM REAL EXPERIENCE</span>
               <h3 className="mt-4 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight">Grounded, expert guidance.</h3>
+              
               <p className="mt-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-                No filters, no performance aesthetics. Just clean metrics, proven methodology, and real operational strategy for busy lifestyles.
-              </p>
-              <p className="mt-3 text-sm md:text-base text-muted-foreground leading-relaxed">
                 DUOFIT was built through our own journey of improving health, consistency and lifestyle habits as a family. Together, we focus on practical guidance, accountability and sustainable routines that fit real life.
               </p>
               <div className="flex flex-wrap gap-3 md:gap-6 mt-5 text-xs font-semibold uppercase tracking-widest text-primary">
@@ -162,7 +162,7 @@ function Home() {
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 mt-7">
                 <Link to="/about"
                   className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-widest text-foreground hover:text-primary transition-colors min-h-[44px]">
-                  Learn More <ArrowRight className="h-4 w-4" />
+                  About DUOFIT <ArrowRight className="h-4 w-4" />
                 </Link>
                 <WhatsAppLink className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors min-h-[44px]">
                   <MessageCircle className="h-4 w-4" /> WhatsApp
