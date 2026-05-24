@@ -38,25 +38,40 @@ const highlights = [
 function Home() {
   return (
     <SiteLayout>
+      
 
       {/* HERO */}
-      <section className="container-editorial py-12 md:py-20 lg:py-28">
+      <section className="container-editorial pt-4 md:pt-8 lg:pt-12 pb-12 md:pb-20 lg:pb-28">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <div className="order-2 lg:order-1">
             <Reveal>
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— BUILT AROUND YOUR LIFE</span>
             </Reveal>
-            <Reveal delay={100}>
-              <h1 className="mt-4 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
-                Real People.<br />Real Life.<br />
-                <span className="text-primary">Real Results.</span>
-              </h1>
-            </Reveal>
+            
             <Reveal delay={200}>
-              <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Helping people stay healthy through practical Nutrition, Movement and Healthy Habits that fit everyday life.
-              </p>
-            </Reveal>
+  <h1 className="mt-6 max-w-3xl text-2xl md:text-3xl lg:text-4xl font-semibold leading-[1.5] tracking-tight">
+    <span className="text-foreground">
+      Helping people stay healthy through practical
+    </span>
+
+    <span className="block mt-3 text-primary">
+      Nutrition
+    </span>
+
+    <span className="block mt-2 text-foreground">
+      Movement
+    </span>
+
+    <span className="block mt-2">
+      <span className="text-foreground">and</span>{" "}
+      <span className="text-primary">Healthy Habits</span>
+    </span>
+
+    <span className="block mt-4 text-foreground text-xl md:text-2xl lg:text-3xl font-medium">
+      that fit everyday life.
+    </span>
+  </h1>
+</Reveal>
             <Reveal delay={300}>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Link to="/contact"
@@ -93,10 +108,10 @@ function Home() {
               <Reveal>
                 <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Why Duofit</span>
               </Reveal>
-              <Reveal delay={160}>
-  <p className="mt-3 text-sm md:text-base font-semibold text-foreground uppercase tracking-wide">
+              <Reveal delay={100}>
+  <h2 className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
     Health should work with your life, not against it.
-  </p>
+  </h2>
 </Reveal>
               
               <Reveal delay={280}>

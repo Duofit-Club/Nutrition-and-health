@@ -23,9 +23,13 @@ export function Navbar() {
           <img src={duofitLogo} alt="Duofit" className="h-9 md:h-12 w-auto" />
           <div className="flex flex-col leading-tight">
             <span className="font-bold text-sm md:text-base tracking-widest text-foreground uppercase">DUOFIT</span>
-            <span className="text-[9px] md:text-[10px] tracking-widest text-muted-foreground uppercase font-medium hidden sm:block">
-              Fitness · Nutrition · Healthy Habits
-            </span>
+            <div className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-muted-foreground">
+  <span>Fitness</span>
+  <span className="text-primary text-[8px]">•</span>
+  <span>Nutrition</span>
+  <span className="text-primary text-[8px]">•</span>
+  <span>Healthy Habits</span>
+</div>
           </div>
         </Link>
 
