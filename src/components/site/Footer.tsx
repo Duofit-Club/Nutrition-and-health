@@ -5,26 +5,26 @@ import duofitLogo from "../../assets/duofit-logo.png";
 export function Footer() {
   return (
     <footer className="bg-foreground text-background border-t border-white/5">
-      <div className="container-editorial py-20">
-        <div className="grid lg:grid-cols-3 gap-16">
+      <div className="container-editorial py-14 md:py-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-16">
 
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-5">
-              <img src={duofitLogo} alt="Duofit" className="h-10 w-auto brightness-0 invert" />
+          {/* Brand — full width on mobile */}
+          <div className="col-span-2 md:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <img src={duofitLogo} alt="Duofit" className="h-9 md:h-10 w-auto brightness-0 invert" />
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-sm tracking-widest text-background uppercase">DUOFIT</span>
-                <span className="text-[10px] tracking-widest text-background/50 uppercase">Fitness · Nutrition · Healthy Habits</span>
+                <span className="text-[9px] tracking-widest text-background/50 uppercase hidden sm:block">Fitness · Nutrition · Healthy Habits</span>
               </div>
             </div>
-            <p className="text-sm text-background/50 leading-relaxed max-w-xs">
-              Sustainable health transformation engineered seamlessly into high-performance professional and family life.
+            <p className="text-xs md:text-sm text-background/50 leading-relaxed max-w-xs">
+              Helping people build healthier routines through practical nutrition, fitness and healthy habits that fit real life.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Navigation</h5>
+            <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary mb-5">Navigation</h5>
             <ul className="space-y-3">
               {[
                 { to: "/", label: "Home" },
@@ -35,7 +35,7 @@ export function Footer() {
                 { to: "/contact", label: "Connect" },
               ].map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-background/60 hover:text-background transition-colors">{l.label}</Link>
+                  <Link to={l.to} className="text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1 block">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -43,17 +43,32 @@ export function Footer() {
 
           {/* Channels */}
           <div>
-            <h5 className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-6">Connect</h5>
+            <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary mb-5">Connect</h5>
             <ul className="space-y-3">
-              <li><a href="https://wa.me/" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors"><MessageCircle className="h-4 w-4" /> WhatsApp</a></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noreferrer" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors"><Instagram className="h-4 w-4" /> Instagram</a></li>
-              <li><a href="mailto:hello@duofit.club" className="flex items-center gap-2 text-sm text-background/60 hover:text-background transition-colors"><Mail className="h-4 w-4" /> hello@duofit.club</a></li>
+              <li>
+                <a href="https://wa.me/" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-2 text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1">
+                  <MessageCircle className="h-4 w-4 shrink-0" /> WhatsApp
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com" target="_blank" rel="noreferrer"
+                  className="flex items-center gap-2 text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1">
+                  <Instagram className="h-4 w-4 shrink-0" /> Instagram
+                </a>
+              </li>
+              <li>
+                <a href="mailto:hello@duofit.club"
+                  className="flex items-center gap-2 text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1">
+                  <Mail className="h-4 w-4 shrink-0" /> hello@duofit.club
+                </a>
+              </li>
             </ul>
           </div>
 
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/30">
+        <div className="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between gap-2 text-[10px] md:text-xs text-background/30">
           <span>© {new Date().getFullYear()} DUOFIT. All rights reserved.</span>
           <span>Become Better Everyday</span>
         </div>
