@@ -7,68 +7,184 @@ export const Route = createFileRoute("/programs")({
   head: () => ({
     meta: [
       { title: "Programs — Duofit.club" },
-      { name: "description", content: "Coaching programs built for real life — nutrition, fitness, habits and family health." },
+      {
+        name: "description",
+        content:
+          "Practical health coaching designed to help individuals and families improve fitness, nutrition, movement and healthier habits in a sustainable and realistic way.",
+      },
     ],
   }),
   component: Programs,
 });
 
 const programs = [
-  { title: "DUOFIT Transformation", desc: "Comprehensive body recomposition tracking for high-performance individuals.", points: ["Biometric body tracking metrics", "Precision macronutrient coaching", "High-yield fitness protocols", "Daily personal accountability loops"] },
-  { title: "DUOFIT Lifestyle", desc: "Deliberate structural engineering of daily performance habits and routines.", points: ["Stress response modulation", "Circadian and sleep design", "Micro-habit building methods", "Long-term identity integration"] },
-  { title: "DUOFIT Family Health", desc: "Shared lifestyle architecture to implement health across the household.", points: ["Unified dietary layout mapping", "Shared healthy routine structures", "Parent wellness maintenance", "Frictionless kitchen organisation"] },
-  { title: "DUOFIT Active Kids", desc: "Fun, natural health exploration focused on building confidence in kids.", points: ["Natural movement mechanics", "Intuitive wellness foundations", "Device-free activity tracking", "Confidence building blocks"] },
+  {
+    title: "Personal Health Coaching",
+    desc: "At DUOFIT, we believe health is interconnected. Factors like fat loss, sleep, stress, energy levels, food habits, movement and lifestyle all influence each other. Instead of focusing on one problem in isolation, we take a more holistic approach to understand the root causes and create practical health strategies that fit your everyday life.",
+    points: [
+      "Personalised nutrition & food guidance",
+      "Fitness, movement & activity planning",
+      "Support for fat loss, weight management & healthier body composition",
+      "Better sleep, recovery & energy levels",
+      "Building healthier routines & consistency",
+      "Regular guidance, accountability & progress tracking",
+    ],
+  },
+  {
+    title: "Family Health & Habits",
+    desc: "A family-focused health coaching program designed to help families improve eating habits, routines, activity levels and healthier living together in a practical and sustainable way.",
+    points: [
+      "Family nutrition & meal guidance",
+      "Healthier routines for kids & parents",
+      "Reducing junk food & unhealthy habits",
+      "Encouraging movement & reducing screen time",
+      "Practical healthy habits for everyday family life",
+      "Building a healthier home environment together",
+    ],
+  },
 ];
 
 const steps = [
-  { n: "01", t: "Assess", d: "Complete multi-point analysis of your biomarkers, daily behaviour and household schedule." },
-  { n: "02", t: "Plan", d: "Develop bespoke parameters that fit seamlessly into your weekly calendar." },
-  { n: "03", t: "Coach", d: "Collaborative optimisation calls to adjust strategies to real-world friction." },
-  { n: "04", t: "Track", d: "Monitor clear data trends to confirm body composition shifts." },
-  { n: "05", t: "Sustain", d: "Transition tracking into long-term, subconscious lifestyle automation." },
+  {
+    n: "01",
+    t: "UNDERSTAND",
+    d: "Understanding your lifestyle, routines, challenges, health history and goals through discussions, schedules and daily habits.",
+  },
+  {
+    n: "02",
+    t: "PLAN",
+    d: "Creating practical nutrition, movement and lifestyle strategies based on your goals, routines and root causes.",
+  },
+  {
+    n: "03",
+    t: "GUIDE",
+    d: "Regular support, accountability and practical guidance to help you stay consistent and sustainable.",
+  },
+  {
+    n: "04",
+    t: "TRACK",
+    d: "Monitoring progress, routines and overall lifestyle improvements over time.",
+  },
+  {
+    n: "05",
+    t: "SUSTAIN",
+    d: "Helping healthier habits become part of your long-term lifestyle naturally.",
+  },
 ];
 
 function Programs() {
   return (
     <SiteLayout>
-      <section className="container-editorial pt-12 md:pt-20 lg:pt-24 pb-10 md:pb-16">
-        <div className="max-w-3xl">
-          <Reveal><span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">— Programs</span></Reveal>
+      {/* Intro */}
+      <section className="container-editorial pt-12 md:pt-20 lg:pt-24 pb-12 md:pb-16">
+        <div className="max-w-4xl">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              — Programs
+            </span>
+          </Reveal>
+
           <Reveal delay={120}>
-            <h1 className="mt-4 text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
-              Architectures of<br /><span className="text-primary">consistency.</span>
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95]">
+              Health Coaching
+              <br />
+              Built For{" "}
+              <span className="text-primary">Real Life.</span>
             </h1>
           </Reveal>
+
           <Reveal delay={220}>
-            <p className="mt-5 text-base md:text-lg text-muted-foreground leading-relaxed max-w-2xl">
-              Clear blueprints engineered to build functional accountability, structural habit evolution, and biometric stability.
+            <p className="mt-6 text-base md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              Practical health coaching designed to help individuals and
+              families improve fitness, nutrition, movement and healthier
+              habits in a sustainable and realistic way.
             </p>
           </Reveal>
         </div>
       </section>
 
       {/* Program Cards */}
-      <section className="container-editorial pb-16 md:pb-24 lg:pb-32">
-        <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+      <section className="container-editorial pb-20 md:pb-28 lg:pb-32">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
           {programs.map((p, i) => (
             <Reveal key={p.title} delay={i * 80}>
-              <div className="border border-border bg-card rounded-sm p-6 md:p-10 flex flex-col justify-between min-h-[360px] md:min-h-[400px] hover:-translate-y-1 hover:border-primary/50 transition-all duration-500">
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-3">{p.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5">{p.desc}</p>
-                  <ul className="space-y-2.5">
+              <div
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  rounded-3xl
+                  border border-border/60
+                  bg-card
+                  p-7 md:p-10
+                  flex flex-col
+                  justify-between
+                  min-h-[680px]
+                  transition-all duration-500
+                  hover:-translate-y-1
+                  hover:border-primary/40
+                  hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)]
+                "
+              >
+                {/* subtle glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary/[0.04] via-transparent to-transparent" />
+
+                <div className="relative z-10">
+                  {/* label */}
+                  <div className="mb-6">
+                    <span className="text-[11px] uppercase tracking-[0.25em] text-primary font-semibold">
+                      DUOFIT PROGRAM
+                    </span>
+                  </div>
+
+                  {/* title */}
+                  <h3 className="text-3xl md:text-4xl font-bold tracking-[-0.03em] leading-[1.05] mb-5 max-w-md">
+                    {p.title}
+                  </h3>
+
+                  {/* desc */}
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
+                    {p.desc}
+                  </p>
+
+                  {/* divider */}
+                  <div className="h-px bg-border mb-8" />
+
+                  {/* points */}
+                  <ul className="space-y-4">
                     {p.points.map((pt) => (
-                      <li key={pt} className="flex items-start gap-3 text-sm text-muted-foreground">
-                        <span className="text-primary font-bold mt-0.5 shrink-0">—</span>
-                        {pt}
+                      <li
+                        key={pt}
+                        className="flex items-start gap-4 text-sm md:text-base text-muted-foreground leading-relaxed"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                        <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <Link to="/contact"
-                  className="mt-7 inline-flex items-center justify-center gap-2 border border-border px-5 py-3.5 text-sm font-medium uppercase tracking-widest hover:bg-foreground hover:text-background hover:border-foreground transition-colors rounded-sm min-h-[48px]">
-                  Request Blueprint <ArrowRight className="h-4 w-4" />
-                </Link>
+
+                {/* CTA */}
+                <div className="relative z-10 pt-10">
+                  <Link
+                    to="/contact"
+                    className="
+                      inline-flex
+                      items-center
+                      gap-3
+                      text-sm
+                      font-semibold
+                      uppercase
+                      tracking-[0.18em]
+                      text-foreground
+                      transition-all
+                      hover:gap-4
+                    "
+                  >
+                    Start Your Journey
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -77,46 +193,65 @@ function Programs() {
 
       {/* Process Timeline */}
       <section className="bg-cream border-y border-border">
-        <div className="container-editorial py-14 md:py-24 lg:py-32">
+        <div className="container-editorial py-16 md:py-24 lg:py-32">
           <Reveal>
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-2">The Operational Roadmap</h2>
-          </Reveal>
-          <Reveal delay={100}>
-            <p className="text-base text-muted-foreground mb-12 md:mb-16 max-w-xl">The structured sequence that drives sustainable behavioural results.</p>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-[-0.04em] mb-3">
+              How Duofit Works
+            </h2>
           </Reveal>
 
-          {/* Mobile: vertical stack */}
+          <Reveal delay={100}>
+            <p className="text-base md:text-lg text-muted-foreground mb-14 md:mb-20 max-w-2xl leading-relaxed">
+              A simple and practical approach designed to help people build
+              healthier routines step by step.
+            </p>
+          </Reveal>
+
+          {/* Mobile */}
           <div className="flex flex-col gap-0 md:hidden">
             {steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 80}>
                 <div className="flex gap-5 pb-8 relative">
-                  {/* vertical line */}
                   {i < steps.length - 1 && (
-                    <div className="absolute left-5 top-12 bottom-0 w-px bg-border" />
+                    <div className="absolute left-5 top-10 bottom-0 w-px bg-border" />
                   )}
+
                   <div className="shrink-0 h-10 w-10 rounded-full bg-background border-2 border-primary flex items-center justify-center z-10">
-                    <span className="text-xs font-bold text-primary">{s.n}</span>
+                    <span className="text-xs font-bold text-primary">
+                      {s.n}
+                    </span>
                   </div>
+
                   <div className="pb-4">
-                    <h4 className="text-lg font-bold mb-2">{s.t}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+                    <h4 className="text-lg font-bold mb-1">{s.t}</h4>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {s.d}
+                    </p>
                   </div>
                 </div>
               </Reveal>
             ))}
           </div>
 
-          {/* Desktop: horizontal */}
-          <div className="hidden md:grid md:grid-cols-5 gap-6 relative">
+          {/* Desktop */}
+          <div className="hidden md:grid md:grid-cols-5 gap-8 relative">
             <div className="absolute top-5 left-[10%] right-[10%] h-px bg-border" />
+
             {steps.map((s, i) => (
               <Reveal key={s.n} delay={i * 100}>
                 <div>
                   <div className="relative z-10 h-10 w-10 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-5">
-                    <span className="text-xs font-bold text-primary">{s.n}</span>
+                    <span className="text-xs font-bold text-primary">
+                      {s.n}
+                    </span>
                   </div>
-                  <h4 className="text-lg font-bold mb-2">{s.t}</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{s.d}</p>
+
+                  <h4 className="text-lg font-bold mb-3">{s.t}</h4>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {s.d}
+                  </p>
                 </div>
               </Reveal>
             ))}
@@ -125,14 +260,46 @@ function Programs() {
       </section>
 
       {/* CTA */}
-      <section className="container-editorial py-16 md:py-24 lg:py-32 text-center">
+      <section className="container-editorial py-20 md:py-28 lg:py-36 text-center">
         <Reveal>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Start building healthier routines today.</h2>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-[-0.04em] leading-[1.05] mb-6 max-w-4xl mx-auto">
+            Start building a healthier lifestyle today.
+          </h2>
         </Reveal>
+
         <Reveal delay={120}>
-          <Link to="/contact"
-            className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-7 py-4 text-sm font-medium uppercase tracking-widest hover:bg-primary hover:text-foreground transition-colors rounded-sm min-h-[48px]">
-            Start Your Journey <ArrowRight className="h-4 w-4" />
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+            Sustainable routines, practical nutrition and healthier habits
+            designed around real everyday life.
+          </p>
+        </Reveal>
+
+        <Reveal delay={180}>
+          <Link
+            to="/contact"
+            className="
+              inline-flex
+              items-center
+              justify-center
+              gap-3
+              bg-foreground
+              text-background
+              px-8
+              py-4
+              text-sm
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+              rounded-full
+              hover:bg-primary
+              hover:text-foreground
+              transition-all
+              duration-300
+              active:scale-95
+            "
+          >
+            Start Your Journey
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>
       </section>

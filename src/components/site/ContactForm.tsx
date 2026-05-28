@@ -38,7 +38,7 @@ export function ContactForm() {
     await new Promise((r) => setTimeout(r, 700));
     setLoading(false);
     setDone(true);
-    toast.success("We'll be in touch within 24 hours.");
+    toast.success("We personally respond to every message");
   }
 
   if (done) {
@@ -60,7 +60,7 @@ export function ContactForm() {
       <div>
         <label className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Goal</label>
         <select name="goal" defaultValue="" className="mt-2 w-full bg-transparent border border-input rounded-xl px-4 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring/40">
-          <option value="" disabled>Select your goal</option>
+          <option value="" disabled>What would you like help with?</option>
           {goals.map((g) => <option key={g}>{g}</option>)}
         </select>
       </div>
@@ -72,7 +72,7 @@ export function ContactForm() {
         disabled={loading}
         className="w-full rounded-full bg-foreground text-background py-4 text-sm font-medium hover:bg-foreground/90 transition-colors disabled:opacity-60"
       >
-        {loading ? "Sending…" : "Request a free consultation"}
+        {loading ? "Sending…" : "START THE CONVERSATION"}
       </button>
       <p className="text-xs text-muted-foreground text-center">We reply personally within 24 hours.</p>
     </form>

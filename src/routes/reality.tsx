@@ -20,49 +20,58 @@ export const Route = createFileRoute("/reality")({
 
 const cards = [
   {
-    front: "Extreme Diets",
-    backTitle: "The Biological Backlash",
+    front: "POOR SLEEP AND RECOVERY",
+    backTitle: "EXHAUSTED PEOPLE STRUGGLE TO STAY CONSISTENT",
     backDesc:
-      "Hyper-restrictive food tracking triggers systemic stress, fracturing lifestyle continuity. We install automated choices over absolute restriction.",
+      "Lack of sleep affects energy, stress, recovery and decision making. Health becomes harder to maintain when the body never gets enough time to recover.",
   },
   {
-    front: "Inconsistency",
-    backTitle: "The All-Or-Nothing Trap",
+    front: "EXTREME DIETS",
+    backTitle: "EXTREME ROUTINES DON'T LAST",
     backDesc:
-      "Waiting for the perfect routine stops progress. Build reliable minimal behaviours that survive chaotic workweeks.",
+      "Overly strict diets often become difficult to maintain in everyday life. Healthy eating works better when it becomes part of your routine instead of temporary restriction.",
   },
   {
-    front: "Busy Lifestyles",
-    backTitle: "Time Misallocation",
+    front: "BUSY LIFESTYLES",
+    backTitle: "HEALTH SHOULD N'T FEEL LIKE A FULL-TIME JOB",
     backDesc:
-      "Fitness doesn't need two hours daily. Our design provides maximal results inside targeted, modular time blocks.",
+      "Staying healthy does not always require long workouts or complicated routines. Small consistent movement and better habits can make a big difference over time.",
   },
   {
-    front: "Lack of Guidance",
-    backTitle: "Information Fatigue",
+    front: "INCONSISTENCY",
+    backTitle: "WAITING FOR THE PERFECT TIME",
     backDesc:
-      "Conflicting generic advice creates friction. Sustainable execution needs custom plans tailored to your unique baseline.",
-  },
-  {
-    front: "Family Health Neglect",
-    backTitle: "Isolating Routines",
-    backDesc:
-      "Forcing separate meals from your family builds friction. We integrate healthy decisions into shared family tables.",
+      "Many people stop after missing a few days and feel like they have failed completely. Consistency becomes easier when routines are flexible enough to fit busy weeks and real schedules.",
   },
   {
     front: "Quick Fix Mentality",
-    backTitle: "The Reset Delusion",
+    backTitle: "QUICK FIXES DON'T CREATE LONG-TERM RESULTS",
     backDesc:
-      "Aggressive multi-week challenges burn out quickly. Sustainable identity shift replaces desperate, temporary sprints.",
+      "Short-term challenges may create temporary motivation, but lasting health needs consistency and realistic habits.",
+  },
+  {
+    front: "LACK OF GUIDANCE",
+    backTitle: "TOO MUCH CONFUSION",
+    backDesc:
+      "Too much online advice leaves people confused about what actually works for them. Health becomes easier when guidance is practical, realistic and suited to your lifestyle.",
+  },
+  {
+    front: "FAMILY HEALTH NEGLECT",
+    backTitle: "HEALTH SHOULD WORK FOR THE WHOLE FAMILY",
+    backDesc:
+      "Health becomes difficult to maintain when routines feel disconnected from family life. Sustainable habits work better when families can follow healthier choices together.",
+  },
+  {
+    front: "RESTART CYCLE",
+    backTitle: "STARTING OVER AGAIN AND AGAIN",
+    backDesc:
+      "Many people spend years restarting fitness and health routines after short periods of motivation. Long-term health improves when consistency becomes more important than perfection.",
   },
 ];
 
 function FlipCard({ card }: { card: typeof cards[0] }) {
-  // clicked = stays flipped after tap/click
-  // hovered = flips while mouse is over it
   const [clicked, setClicked] = useState(false);
   const [hovered, setHovered] = useState(false);
-
   const flipped = clicked || hovered;
 
   return (
@@ -70,17 +79,12 @@ function FlipCard({ card }: { card: typeof cards[0] }) {
       role="button"
       tabIndex={0}
       aria-pressed={clicked}
-      aria-label={`${card.front} — ${
-        flipped ? card.backDesc : "tap or hover to reveal"
-      }`}
-      className="w-full h-64 md:h-72 [perspective:1000px] cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm active:scale-[0.98] transition-transform"
+      className="w-full h-64 md:h-72 [perspective:1000px] cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
       onClick={() => setClicked((f) => !f)}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onKeyDown={(e) =>
-        e.key === "Enter" || e.key === " "
-          ? setClicked((f) => !f)
-          : null
+        (e.key === "Enter" || e.key === " ") && setClicked((f) => !f)
       }
     >
       <div
@@ -90,18 +94,14 @@ function FlipCard({ card }: { card: typeof cards[0] }) {
       >
         {/* Front */}
         <div className="absolute inset-0 [backface-visibility:hidden] bg-white/5 border border-white/10 rounded-sm p-6 md:p-8 flex flex-col justify-between">
-          <h3 className="text-xl md:text-2xl font-bold text-background leading-tight">
+          <h3 className="text-lg md:text-xl font-bold text-background leading-snug">
             {card.front}
           </h3>
-
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium uppercase tracking-widest text-primary">
               <span className="md:hidden">Tap to reveal</span>
-              <span className="hidden md:inline">
-                Hover or click to reveal
-              </span>
+              <span className="hidden md:inline">Hover or click to reveal</span>
             </span>
-
             <RotateCcw className="h-3 w-3 text-primary" />
           </div>
         </div>
@@ -109,24 +109,20 @@ function FlipCard({ card }: { card: typeof cards[0] }) {
         {/* Back */}
         <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-primary rounded-sm p-6 md:p-8 flex flex-col justify-between">
           <div>
-            <h4 className="text-base md:text-lg font-bold text-foreground mb-3">
+            <h4 className="text-base font-bold text-foreground mb-3">
               {card.backTitle}
             </h4>
-
             <p className="text-sm text-foreground/80 leading-relaxed">
               {card.backDesc}
             </p>
           </div>
-
           <div className="flex items-center justify-between">
             <span className="text-xs font-medium uppercase tracking-widest text-foreground/60">
               <span className="md:hidden">Tap to close</span>
-
               <span className="hidden md:inline">
                 {clicked ? "Click to close" : "Move away to close"}
               </span>
             </span>
-
             {clicked && (
               <span className="text-[10px] bg-foreground/10 text-foreground px-2 py-0.5 rounded-full uppercase tracking-wide">
                 Pinned
@@ -143,60 +139,55 @@ function Reality() {
   return (
     <SiteLayout>
       <div className="bg-foreground text-background min-h-screen">
-        {/* HERO */}
+
+        {/* Hero */}
         <section className="container-editorial pt-16 md:pt-24 pb-12 md:pb-16 text-center">
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               — Reality Check
             </span>
           </Reveal>
-
           <Reveal delay={120}>
             <h1 className="mt-5 text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-background">
-              Why most health
-              <br />
-              journeys fail.
+              Why most health<br />journeys fail.
             </h1>
           </Reveal>
-
           <Reveal delay={240}>
             <p className="mt-5 text-base md:text-lg text-background/60 max-w-xl mx-auto leading-relaxed">
-              Health becomes difficult when it is built around shortcuts,
-              extreme routines and temporary motivation.
+              People don't fail because they lack motivation. They struggle
+              because health is often approached through shortcuts, extreme
+              routines and habits that don't fit their schedules,
+              responsibilities or lifestyle.
             </p>
           </Reveal>
-
-          {/* Device hint */}
           <Reveal delay={300}>
             <p className="mt-3 text-sm text-primary font-medium md:hidden">
               👆 Tap any card to reveal
             </p>
-
             <p className="mt-3 text-sm text-primary font-medium hidden md:block">
               Hover or click any card to reveal
             </p>
           </Reveal>
         </section>
 
-        {/* CARDS */}
+        {/* Cards — 2 cols mobile, 4 cols desktop */}
         <section className="container-editorial pb-16 md:pb-24">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5">
             {cards.map((card, i) => (
-              <Reveal key={i} delay={i * 60}>
+              <Reveal key={i} delay={i * 50}>
                 <FlipCard card={card} />
               </Reveal>
             ))}
           </div>
         </section>
 
-        {/* QUOTE */}
+        {/* Quote */}
         <section className="border-t border-white/10">
           <div className="container-editorial py-16 md:py-24 text-center max-w-3xl mx-auto">
             <Reveal>
               <p className="text-xl md:text-2xl lg:text-3xl font-light leading-relaxed text-background/80 italic">
-                "Healthy routines shouldn't be an auxiliary stress factor. If
-                your health design doesn't survive a high-stress month, the
-                design itself is broken."
+                "Health should support your life, not become another source of
+                stress."
               </p>
             </Reveal>
           </div>
@@ -209,19 +200,17 @@ function Reality() {
               So how does DUOFIT help?
             </h3>
           </Reveal>
-
           <Reveal delay={120}>
             <Link
               to="/programs"
-              className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-7 py-4 text-sm font-medium uppercase tracking-widest hover:bg-primary active:scale-95 active:opacity-80 transition-all rounded-sm min-h-[48px]"
+              className="inline-flex items-center justify-center gap-2 bg-background text-foreground px-7 py-4 text-sm font-medium uppercase tracking-widest hover:bg-primary active:scale-95 transition-all rounded-sm min-h-[48px]"
             >
               Explore Programs <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </section>
+
       </div>
     </SiteLayout>
   );
 }
-
-export default Reality;

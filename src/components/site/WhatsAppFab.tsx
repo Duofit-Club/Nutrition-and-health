@@ -1,6 +1,6 @@
 import { MessageCircle } from "lucide-react";
 
-export const WHATSAPP_NUMBER = "+91XXXXXXXXXX";
+export const WHATSAPP_NUMBER = "+919052853200";
 const WA_URL = `https://wa.me/${WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}`;
 
 export function WhatsAppFab() {
