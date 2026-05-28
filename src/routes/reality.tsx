@@ -32,16 +32,22 @@ const cards = [
       "Overly strict diets often become difficult to maintain in everyday life. Healthy eating works better when it becomes part of your routine instead of temporary restriction.",
   },
   {
-    front: "BUSY LIFESTYLES",
-    backTitle: "HEALTH SHOULD N'T FEEL LIKE A FULL-TIME JOB",
+    front: "FAMILY HEALTH NEGLECT",
+    backTitle: "HEALTH SHOULD WORK FOR THE WHOLE FAMILY",
     backDesc:
-      "Staying healthy does not always require long workouts or complicated routines. Small consistent movement and better habits can make a big difference over time.",
+      "Health becomes difficult to maintain when routines feel disconnected from family life. Sustainable habits work better when families can follow healthier choices together.",
   },
   {
     front: "INCONSISTENCY",
     backTitle: "WAITING FOR THE PERFECT TIME",
     backDesc:
       "Many people stop after missing a few days and feel like they have failed completely. Consistency becomes easier when routines are flexible enough to fit busy weeks and real schedules.",
+  },
+  {
+    front: "BUSY LIFESTYLES",
+    backTitle: "HEALTH SHOULD N'T FEEL LIKE A FULL-TIME JOB",
+    backDesc:
+      "Staying healthy does not always require long workouts or complicated routines. Small consistent movement and better habits can make a big difference over time.",
   },
   {
     front: "Quick Fix Mentality",
@@ -54,12 +60,6 @@ const cards = [
     backTitle: "TOO MUCH CONFUSION",
     backDesc:
       "Too much online advice leaves people confused about what actually works for them. Health becomes easier when guidance is practical, realistic and suited to your lifestyle.",
-  },
-  {
-    front: "FAMILY HEALTH NEGLECT",
-    backTitle: "HEALTH SHOULD WORK FOR THE WHOLE FAMILY",
-    backDesc:
-      "Health becomes difficult to maintain when routines feel disconnected from family life. Sustainable habits work better when families can follow healthier choices together.",
   },
   {
     front: "RESTART CYCLE",

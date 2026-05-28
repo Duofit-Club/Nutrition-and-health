@@ -34,7 +34,7 @@ const programs = [
     title: "Family Health & Habits",
     desc: "A family-focused health coaching program designed to help families improve eating habits, routines, activity levels and healthier living together in a practical and sustainable way.",
     points: [
-      "Family nutrition & meal guidance",
+      "Family nutrition & food guidance",
       "Healthier routines for kids & parents",
       "Reducing junk food & unhealthy habits",
       "Encouraging movement & reducing screen time",

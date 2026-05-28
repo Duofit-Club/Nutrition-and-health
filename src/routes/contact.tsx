@@ -124,7 +124,7 @@ function Contact() {
               );
             })}
 
-            <Reveal delay={380}>
+            {/* <Reveal delay={380}>
               <div className="grid grid-cols-3 gap-3 mt-2">
                 {[
                   { v: "PERSONAL", l: "Response" },
@@ -145,7 +145,7 @@ function Contact() {
                   </div>
                 ))}
               </div>
-            </Reveal>
+            </Reveal> */}
           </div>
 
         </div>
