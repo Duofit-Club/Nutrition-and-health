@@ -145,9 +145,6 @@ function About() {
             {/* LEFT — Why Duofit Started */}
             <Reveal delay={80}>
               <div className="border border-border rounded-sm p-7 md:p-10 h-full bg-card">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                  — Our journey
-                </span>
                 <h2 className="mt-4 text-xl md:text-3xl font-bold tracking-tight mb-8">
                   Why Duofit started
                 </h2>
@@ -171,9 +168,6 @@ function About() {
             {/* RIGHT — What We Believe (values) */}
             <Reveal delay={160}>
               <div className="border border-border rounded-sm p-7 md:p-10 h-full bg-card">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                  — Our values
-                </span>
                 <h2 className="mt-4 text-xl md:text-3xl font-bold tracking-tight mb-8">
                   What we believe
                 </h2>
@@ -202,11 +196,7 @@ function About() {
       {/* ── MEET THE FOUNDERS ── */}
       <section className="bg-cream border-y border-border">
         <div className="container-editorial py-16 md:py-24">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              — Meet the founders
-            </span>
-          </Reveal>
+
           <Reveal delay={100}>
             <h2 className="mt-4 text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-10 md:mb-14">
               The people behind DUOFIT.
@@ -281,9 +271,6 @@ function About() {
             {/* LEFT — What Makes Duofit Different (flip cards) */}
             <Reveal delay={80}>
               <div className="border border-border rounded-sm p-7 md:p-10 h-full bg-card">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                  — What we believe
-                </span>
                 <h2 className="mt-4 text-xl md:text-3xl font-bold tracking-tight mb-8">
                   What makes Duofit different.
                 </h2>
@@ -300,9 +287,6 @@ function About() {
             {/* RIGHT — Who Is It For */}
             <Reveal delay={160}>
               <div className="border border-border rounded-sm p-7 md:p-10 h-full bg-card">
-                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                  — Who we help
-                </span>
                 <h2 className="mt-4 text-xl md:text-3xl font-bold tracking-tight mb-4">
                   Who is DUOFIT for?
                 </h2>
@@ -335,11 +319,8 @@ function About() {
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              — Our mission
+               Our mission
             </span>
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="h-0.5 w-8 bg-primary mx-auto mt-5 mb-8" />
           </Reveal>
           <Reveal delay={160}>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed">

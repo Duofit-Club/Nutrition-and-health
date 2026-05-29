@@ -30,7 +30,7 @@ export function Footer() {
                 { to: "/", label: "Home" },
                 { to: "/reality", label: "Reality Check" },
                 { to: "/programs", label: "Programs" },
-                { to: "/results", label: "Results" },
+                // { to: "/results", label: "Results" },
                 { to: "/about", label: "About" },
                 { to: "/contact", label: "Connect" },
               ].map((l) => (
@@ -58,9 +58,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@duofit.club"
+                <a href="mailto:support@duofit.club"
                   className="flex items-center gap-2 text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1">
-                  <Mail className="h-4 w-4 shrink-0" /> hello@duofit.club
+                  <Mail className="h-4 w-4 shrink-0" /> support@duofit.club
                 </a>
               </li>
             </ul>

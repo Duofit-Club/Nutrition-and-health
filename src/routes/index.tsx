@@ -37,14 +37,6 @@ function Home() {
                 <span className="block mt-2 text-foreground">Your Life</span>
               </h1>
             </Reveal>
-            <Reveal delay={200}>
-              <p className="mt-8 max-w-2xl text-base md:text-lg leading-[1.9] text-muted-foreground">
-                Helping people stay healthy through practical<br />
-                <span className="text-foreground font-medium"> Nutrition</span>,
-                <span className="text-foreground font-medium"> Movement</span> and
-                <span className="text-foreground font-medium"> Healthy Habits</span>.
-              </p>
-            </Reveal>
             <Reveal delay={300}>
               <div className="mt-8">
                 <Link
@@ -55,6 +47,15 @@ function Home() {
                 </Link>
               </div>
             </Reveal>
+            <Reveal delay={200}>
+              <p className="mt-8 max-w-2xl text-base md:text-lg leading-[1.9] text-muted-foreground">
+                Helping people stay healthy through practical<br />
+                <span className="text-foreground font-medium"> Nutrition</span>,
+                <span className="text-foreground font-medium"> Movement</span> and
+                <span className="text-foreground font-medium"> Healthy Habits</span>.
+              </p>
+            </Reveal>
+            
           </div>
           <Reveal delay={150} className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-sm aspect-[4/3] md:aspect-[4/5] bg-muted">
@@ -124,7 +125,7 @@ function Home() {
         </div>
       </section>
 
-      {/* MEET COACH */}
+      {/* MEET COACH
       <section className="container-editorial py-14 md:py-24 lg:py-32">
         <Reveal>
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center border border-border rounded-sm p-6 md:p-10 lg:p-14 bg-card">
@@ -157,7 +158,7 @@ function Home() {
             </div>
           </div>
         </Reveal>
-      </section>
+      </section> */}
 
     </SiteLayout>
   );
