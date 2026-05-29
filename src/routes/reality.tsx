@@ -142,11 +142,6 @@ function Reality() {
 
         {/* Hero */}
         <section className="container-editorial pt-16 md:pt-24 pb-12 md:pb-16 text-center">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              — Reality Check
-            </span>
-          </Reveal>
           <Reveal delay={120}>
             <h1 className="mt-5 text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-background">
               Why most health<br />journeys fail.

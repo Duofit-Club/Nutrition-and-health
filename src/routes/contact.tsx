@@ -50,11 +50,6 @@ function Contact() {
 
           {/* Form side */}
           <div className="lg:col-span-7">
-            <Reveal>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                — Connect
-              </span>
-            </Reveal>
 
             <Reveal delay={100}>
               <h1 className="mt-4 text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">

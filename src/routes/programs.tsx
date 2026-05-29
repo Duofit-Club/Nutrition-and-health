@@ -78,11 +78,6 @@ function Programs() {
       {/* Intro */}
       <section className="container-editorial pt-12 md:pt-20 lg:pt-24 pb-12 md:pb-16">
         <div className="max-w-4xl">
-          <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-              — Programs
-            </span>
-          </Reveal>
 
           <Reveal delay={120}>
             <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95]">

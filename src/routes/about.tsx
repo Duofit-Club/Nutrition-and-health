@@ -105,12 +105,13 @@ function About() {
       {/* ── ORIGIN STORY — no eyebrow ── */}
       <section className="container-editorial pt-16 md:pt-24 lg:pt-32 pb-16 md:pb-24">
         <div className="max-w-4xl">
-          <Reveal>
+          {/* <Reveal>
             <div className="h-0.5 w-12 bg-primary mb-8" />
-          </Reveal>
+          </Reveal> */}
           <Reveal delay={80}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
-              Healthy living should fit real life.
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95]">
+              Healthy living should fit{" "}
+              <span className="text-primary">Real Life.</span>
             </h1>
           </Reveal>
           <Reveal delay={160}>
