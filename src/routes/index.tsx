@@ -70,38 +70,7 @@ function Home() {
         </div>
       </section>
 
-      {/* WHY DUOFIT */}
-      <section className="bg-cream border-y border-border">
-        <div className="container-editorial py-14 md:py-24 lg:py-32">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            <div>
-              <Reveal delay={100}>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
-                  Health should work with your life, not against it.
-                </h2>
-              </Reveal>
-              <Reveal delay={220}>
-                <p className="mt-5 text-base text-muted-foreground leading-relaxed">
-                  Duofit focuses on helping people build healthier habits that are realistic and sustainable. Most people struggle not because of information or motivation — their routines don't fit their schedules, responsibilities and lifestyle.
-                </p>
-              </Reveal>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {highlights.map((h, i) => (
-                <Reveal key={h.t} delay={i * 80}>
-                  <div className="border border-border bg-card rounded-sm p-5 md:p-6 h-full">
-                    <div className="h-1 w-8 bg-primary mb-3 rounded-full" />
-                    <h4 className="font-bold text-sm md:text-base text-foreground mb-2">{h.t}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{h.d}</p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* REALITY TEASER */}
+{/* REALITY TEASER */}
       <section className="bg-foreground text-background py-20 md:py-32 lg:py-40 text-center">
         <div className="container-editorial">
           <Reveal>
@@ -125,6 +94,38 @@ function Home() {
         </div>
       </section>
 
+
+      {/* WHY DUOFIT */}
+      <section className="bg-cream border-y border-border">
+        <div className="container-editorial py-14 md:py-24 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <div>
+              <Reveal delay={100}>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight">
+                  Health should work with your life, not against it.
+                </h2>
+              </Reveal>
+              <Reveal delay={220}>
+                <p className="mt-5 text-base text-muted-foreground leading-relaxed">
+                  Duofit focuses on helping people build healthier habits that are realistic and sustainable. Most people struggle not because of information or motivation — their routines don't fit their schedules, responsibilities and lifestyle.
+                </p>
+              </Reveal>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {highlights.map((h, i) => (
+                <Reveal key={h.t} delay={i * 80}>
+                  <div className="border border-border bg-card rounded-sm p-5 md:p-6 h-full">
+                    <h4 className="font-bold text-sm md:text-base text-foreground mb-2">{h.t}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{h.d}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
       {/* MEET COACH
       <section className="container-editorial py-14 md:py-24 lg:py-32">
         <Reveal>

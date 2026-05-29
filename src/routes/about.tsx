@@ -78,7 +78,6 @@ function BeliefCard({ card }: { card: typeof beliefs[0] }) {
       >
         {/* Front */}
         <div className="absolute inset-0 [backface-visibility:hidden] border border-border bg-background rounded-sm p-4 flex flex-col justify-between">
-          <div className="h-0.5 w-5 bg-primary rounded-full" />
           <h4 className="text-sm md:text-base font-bold text-foreground leading-tight">
             {card.front}
           </h4>
@@ -155,7 +154,7 @@ function About() {
                     "DUOFIT was built to create a simpler approach — one focused on practical nutrition, movement, healthier routines and long-term consistency instead of short-term pressure.",
                   ].map((para, i) => (
                     <div key={i} className="flex gap-4 items-start">
-                      <div className="h-0.5 w-5 bg-primary mt-3 shrink-0" />
+                      <div className="h-2 w-2 rounded-full bg-primary mt-2 shrink-0" />
                       <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                         {para}
                       </p>
@@ -174,12 +173,12 @@ function About() {
                 <div className="space-y-0">
                   {values.map((v, i) => (
                     <div
-                      key={i}
-                      className={`py-4 border-b border-border/60 flex items-center gap-4 last:border-0 ${
-                        i % 2 === 1 ? "bg-cream/30 -mx-7 px-7 md:-mx-10 md:px-10" : ""
-                      }`}
-                    >
-                      <div className="h-0.5 w-6 bg-primary shrink-0" />
+  key={i}
+  className={`py-4 border-b border-border/60 flex items-start gap-4 last:border-0 ${
+    i % 2 === 1 ? "bg-cream/30 -mx-7 px-7 md:-mx-10 md:px-10" : ""
+  }`}
+>
+                      <div className="h-2 w-2 rounded-full bg-primary mt-1.5 shrink-0" />
                       <p className="text-sm md:text-base font-semibold text-foreground">
                         {v}
                       </p>
