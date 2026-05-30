@@ -346,7 +346,7 @@ function About() {
               to="/contact"
               className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-8 py-4 text-sm font-medium uppercase tracking-widest hover:bg-primary hover:text-foreground active:scale-95 transition-all rounded-sm min-h-[48px]"
             >
-              GET STARTED <ArrowRight className="h-4 w-4" />
+              Start your journey <ArrowRight className="h-4 w-4" />
             </Link>
           </Reveal>
         </div>

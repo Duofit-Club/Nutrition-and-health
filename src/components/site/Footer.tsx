@@ -11,7 +11,7 @@ export function Footer() {
           {/* Brand — full width on mobile */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <img src={duofitLogo} alt="Duofit" className="h-9 md:h-10 w-auto brightness-0 invert" />
+              <img src={duofitLogo} alt="Duofit" className="h-9 md:h-10 w-auto object-contain" />
               <div className="flex flex-col leading-tight">
                 <span className="font-bold text-sm tracking-widest text-background uppercase">DUOFIT</span>
                 <span className="text-[9px] tracking-widest text-background/50 uppercase hidden sm:block">Fitness · Nutrition · Healthy Habits</span>
@@ -46,7 +46,7 @@ export function Footer() {
             <h5 className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary mb-5">Connect</h5>
             <ul className="space-y-3">
               <li>
-                <a href="https://wa.me/" target="_blank" rel="noreferrer"
+                <a href="https://wa.me/919052853200" target="_blank" rel="noreferrer"
                   className="flex items-center gap-2 text-xs md:text-sm text-background/60 hover:text-background transition-colors py-1">
                   <MessageCircle className="h-4 w-4 shrink-0" /> WhatsApp
                 </a>

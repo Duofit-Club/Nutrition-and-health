@@ -143,7 +143,7 @@ function Reality() {
         {/* Hero */}
         <section className="container-editorial pt-16 md:pt-24 pb-12 md:pb-16 text-center">
           <Reveal delay={120}>
-            <h1 className="mt-5 text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] text-background">
+            <h1 className="mt-5 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.04em] leading-[0.95] text-background">
               Why most health<br />journeys fail.
             </h1>
           </Reveal>
